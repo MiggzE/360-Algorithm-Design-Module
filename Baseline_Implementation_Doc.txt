@@ -1,0 +1,30 @@
+Problem Definition:
+
+Longest Cubic Subsequence
+
+Let S be a sequence with length n over an alphabet
+A subsequence T of S is obtained by deleteing zero or more symbols from S without changing the relative order of S
+A cubic subsequence C of S is a subsequence in the form
+
+C = X-X-X 
+
+where X is a sequence (possibly empty) and "-" denotes concatenation 
+
+Example High Level Walkthroughs
+
+Example 1:
+
+Consider S = atcgtatgcatgca
+
+This example produces the cubic subsequence of atg
+
+atcgtatgcatgca
+atgtatgcatgca - Remove S[2] - c
+atgatgcatgca - Remove S[3] - t
+atgatgatgca - Remove S[6] - c
+atgatgatga - Remove S[9] - c
+atgatgatg - Remove S[9] - a
+
+This gives us
+atg-atg-atg 
+which is a subsequence with a length of 9
