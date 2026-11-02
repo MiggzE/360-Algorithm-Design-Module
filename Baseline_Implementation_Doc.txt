@@ -28,3 +28,34 @@ atgatgatg - Remove S[9] - a
 This gives us
 atg-atg-atg 
 which is a subsequence with a length of 9
+
+
+Example 2: 
+
+Consider S = aabacabda
+
+aabacabda
+aaacabda - Remove S[2] - b
+aaaabda - Remove S[3] - c
+aaabda - Remove S[3] - a
+aaada - Remove S[3] - b
+aaaa - Remove S[3] - d
+aaa - Remove S[3] - a
+
+This give us 
+a-a-a
+which is a subsequence with a length of 3
+
+Example 2: aabacabdaea
+
+aabacabdaea
+aaacabdaea - Remove S[2]- b
+aaaabdaea - Remove S[3] - c
+aaaadaea - Remove S[4] - b
+aaaaaea- Remove S[4] - d
+aaaaaa- Remove S[5] - e
+
+This gives us 
+aa-aa-aa
+which is a subsequence with a length of 2
+
