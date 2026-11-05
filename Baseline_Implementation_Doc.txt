@@ -46,7 +46,7 @@ This give us
 a-a-a
 which is a subsequence with a length of 3
 
-Example 2: aabacabdaea
+Example 3: aabacabdaea
 
 aabacabdaea
 aaacabdaea - Remove S[2]- b
@@ -57,5 +57,12 @@ aaaaaa- Remove S[5] - e
 
 This gives us 
 aa-aa-aa
-which is a subsequence with a length of 2
+which is a subsequence with a length of 6
+
+Baseline idea
+
+For the baseline implementation we can create the entire problem set and then find the ones that are
+cubic sequences, and from there we can compare each one that we find we the previous max and switch them
+out if the new one is bigger.
+
 
