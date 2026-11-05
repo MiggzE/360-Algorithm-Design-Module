@@ -65,4 +65,19 @@ For the baseline implementation we can create the entire problem set and then fi
 cubic sequences, and from there we can compare each one that we find we the previous max and switch them
 out if the new one is bigger.
 
+We can create every instance where we have added a letter or skipped a letter and check if that sequence is
+a cubic sequence by getting the length dividing it by 3 and then checking if each third is the same
+
+for example: 
+
+aaa = 3 / 3 = 1 
+each section should be one character long
+
+so then we check if each third equals each other
+a = a = a
+
+We can create every instance with a recursive call 
+
+LCubS(string,tempString,i + 1) skipping over the current letter
+LCubS(string,tempString + [string[i]], i + 1) adding the current letter
 
