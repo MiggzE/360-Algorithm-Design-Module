@@ -75,9 +75,12 @@ each section should be one character long
 
 so then we check if each third equals each other
 a = a = a
+in this case its a cubic sequence
 
 We can create every instance with a recursive call 
 
 LCubS(string,tempString,i + 1) skipping over the current letter
 LCubS(string,tempString + [string[i]], i + 1) adding the current letter
+
+
 
