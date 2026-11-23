@@ -1,0 +1,16 @@
+Longest Cubic Subsequence proof
+
+To properly prove our solution we need to check for progress and termination
+
+Termination:
+Our main iterative step is from the recusive function inside LCubS, findLCubS.
+
+Our base case for the recursive function is if i equals to the length of our main string.
+This prevents the recusive function from going out of the bounds of the main string.
+In every recusive function call in findLCubS we iterate i by one, which means that i never goes
+down or stays where its at. That means that i will reach the length of the main string at some point
+When we initially start the recursive calls we call findLCubS with an i of 0 so even if the main string
+is an empty string it will terminate. The length of the main string can also never be a negative number 
+since a string is needed to be passed through for the LCubS function. 
+
+Progress:
