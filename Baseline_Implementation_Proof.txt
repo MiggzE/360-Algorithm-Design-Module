@@ -14,3 +14,51 @@ is an empty string it will terminate. The length of the main string can also nev
 since a string is needed to be passed through for the LCubS function. 
 
 Progress:
+
+In order to prove progress we need to reiterate what we are trying to solve
+Given a string S we need to find the largest sequence X that repeats from within that string 3 times with the ability 
+to keep or remove letters. However, their relative position should stay the same. 
+
+We can obtain subsequences of the string by creating a recursive function to add or skip letters from our main 
+string to a temp string which would apply the same logic to those 2 cases.
+
+        addCurrLetter = findLCubS(i + 1, curr + s[i])
+        skipCurrLetter = findLCubS(i + 1, curr)
+
+Once we create a new subsequence we need to verify it. This is what our isCubic(string)
+function does. 
+
+First it checks if the string is a multiple of 3 using the modulo sign since it can't be a cubic subsequence
+if each third of the subsequence is not the same length. If that passes then it cuts the string into 3 seperate
+slices and compares them to each other. If all of those slices equal the same string then
+its a valid subsequence otherwise it isn't.
+
+Inductive Hypothesis:
+
+Basecase = i == len(s)
+
+As previously stated, since i starts at 0 the smallest that len(s) can be is 0 
+Thus the basecase for i = 0 is valid
+
+k = i
+Assume all cases from 0 to k are valid states
+
+Iteration k + 1
+
+In our current state we can create every possible state after that by recursively calling our 2 possible 
+states. Adding a letter to the subsequence and skipping a letter.
+
+By doing this in each state we explore every possible state until we have exhausted every single letter 
+in our main string.
+
+Once we reach our base case
+
+if our current subsequence is valid
+as defined by len(curr) % 3 != 0 and curr[:1/3] == curr[1/3:2/3] == curr[2/3:]
+then it returns the current subsequence 
+if it isn't then it returns an empty string.
+
+When the recursive calls propagate up it compares the states that have added a letter to the
+current subsequence and the ones that have skipped it and determines which subsequence is the
+largest. 
+

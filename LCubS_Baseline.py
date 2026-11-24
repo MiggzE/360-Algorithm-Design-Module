@@ -17,4 +17,4 @@ def LCubS(s):
     return findLCubS(0,"")
 
 
-print(LCubS("ababac"))
+print(LCubS("aaabbbbbbcabcabca"))
