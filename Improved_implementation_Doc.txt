@@ -1,0 +1,21 @@
+A better algorithm for Lcubs starts with dynamic programming
+in order for us to reduce to problemset and not just search the entire thing.
+
+there are two ways we are able to do this
+with Tabulation or memoization. 
+
+Taking examples from longest repeating subsequence we can use either tabulation or memoization
+Memoization is a lot more similar to our baseline implementation rather than tabulation, so we will be using
+that.
+
+Longest repeating subsequence is a similar problem to longest cubic sequence.
+Rather than looking for a subsequence that repeats 3 times we only have to look 
+for a   that repeats atleast twice.
+
+The memoization solution for longest repeating subsequence aligns the string with its self
+and checks each possible combination of sequences skipping the ones that are invalid and building
+upon previous finds. 
+
+To compare the string with itself it uses a 2D memoization table. So for a cubic subsequence we can just
+extend that to a 3d memoization table since we want to find subsequences that repeat 3 times.
+
