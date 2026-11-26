@@ -22,9 +22,13 @@ extend that to a 3d memoization table since we want to find subsequences that re
 It is easier to explain how the memoization works with a 2d table rather than a 3d so ill do that first
 so we can start with that and then extend it to the 3d version
 
-We compare each letter with a different index 
-so if they are the same letter and if they are different indexes we put a 0 in that spot
-otherwise we put a  
+We compare each letter with different indexes (as to not compare the same letters with each other)
+and increment the number in the memoisation table by one in that specific index. 
+
+If a number for an index is already computed then just return the number
+Otherwise create 2 recursive calls 
+one for i + 1
+and one for j + 1
 
 
 Example: abcaabbc
@@ -39,3 +43,12 @@ b
 c
 --
 j
+
+For the 2d memoisation table we are comparing the string with itself in order to find repeating subsequences we simply
+just need to compare the same string 3 times for a solution for longest cubic subsequence. 
+
+Changes from longest repeating subsequence to longest cubic subsequence
+
+2D memoisation table -> 3D memoisation table
+2 Comparisons -> 3 Comparisons
+2 Recusive Calls -> 3 Recursive Calls
