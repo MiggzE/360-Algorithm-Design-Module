@@ -10,7 +10,7 @@ def LCubS(S):
         if(memTable[i - 1][j - 1][k - 1] != -1):
             return memTable[i - 1][j - 1][k - 1]
 
-        if(string[i - 1] == string[j - 1] == string[k - 1] and i != j != k):
+        if(string[i - 1] == string[j - 1] == string[k - 1] and i != j and j != k and i != k):
             memTable[i - 1][j - 1][k - 1] = 1 + findLCubS(i - 1, j - 1, k - 1, string, memTable)
             return memTable[i - 1][j - 1][k - 1]
 
