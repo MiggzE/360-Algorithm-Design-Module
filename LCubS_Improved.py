@@ -21,7 +21,7 @@ def LCubS(S):
         )
 
         return memTable[i - 1][j - 1][k - 1]
+    res = findLCubS(sLen, sLen, sLen, S, memo)
+    return res
 
-    return findLCubS(sLen, sLen, sLen, S, memo)
-
-print(LCubS("aaa"))
+print(LCubS("aaabbbcccdd"))

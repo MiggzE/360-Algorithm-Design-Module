@@ -52,3 +52,5 @@ Changes from longest repeating subsequence to longest cubic subsequence
 2D memoisation table -> 3D memoisation table
 2 Comparisons -> 3 Comparisons
 2 Recusive Calls -> 3 Recursive Calls
+
+Improvements upon the base dp memoisation implementation: 
