@@ -24,4 +24,4 @@ def LCubS(S):
     res = findLCubS(sLen, sLen, sLen, S, memo)
     return res
 
-print(LCubS("aaabbbcccdd"))
+print(LCubS("aaaa"))

@@ -1,57 +1,16 @@
-A better algorithm for Lcubs starts with dynamic programming
-in order for us to reduce to problemset and not just search the entire thing.
+A better algorithm for Lcubs can be done using dynamic programming and memoisation
 
-there are two ways we are able to do this
-with Tabulation or memoization. 
+We can cut up the string into 3 subsequences using the ranges p and q 
+x1 = string[:p]
+x2 = string[p:q]
+x3 = string[q:]
 
-Taking examples from longest repeating subsequence we can use either tabulation or memoization
-Memoization is a lot more similar to our baseline implementation rather than tabulation, so we will be using
-that.
+With the 3 subsequences we obtained we can get the longest common subsequence between them
 
-Longest repeating subsequence is a similar problem to longest cubic sequence.
-Rather than looking for a subsequence that repeats 3 times we only have to look 
-for a   that repeats atleast twice.
+if we get a common subsequence we record it in a memoisation table so that it doesn't get 
+recomputed again.
 
-The memoization solution for longest repeating subsequence aligns the string with its self
-and checks each possible combination of sequences skipping the ones that are invalid and building
-upon previous finds. 
-
-To compare the string with itself it uses a 2D memoization table. So for a cubic subsequence we can just
-extend that to a 3d memoization table since we want to find subsequences that repeat 3 times.
-
-It is easier to explain how the memoization works with a 2d table rather than a 3d so ill do that first
-so we can start with that and then extend it to the 3d version
-
-We compare each letter with different indexes (as to not compare the same letters with each other)
-and increment the number in the memoisation table by one in that specific index. 
-
-If a number for an index is already computed then just return the number
-Otherwise create 2 recursive calls 
-one for i + 1
-and one for j + 1
-
-
-Example: abcaabbc
-    a  b  c  a  a  b  b  c  | i
-a   0  0  0  1  1  0  0  0   
-b   0  0  0  1  1  1  1  0
-c   0  0  0  1  1  1  1  1
-a   1  0  0  1  2  1  1  1 
-a   1  0  0  2  2  1  1  1
-b   1  1  0  2  2  1  2  1
-b
-c
---
-j
-
-For the 2d memoisation table we are comparing the string with itself in order to find repeating subsequences we simply
-just need to compare the same string 3 times for a solution for longest cubic subsequence. 
-
-Changes from longest repeating subsequence to longest cubic subsequence
-
-2D memoisation table -> 3D memoisation table
-2 Comparisons -> 3 Comparisons
-2 Recusive Calls -> 3 Recursive Calls
+Then we iterate through all the possible pairs of p and q in order to find all the common subsequences
 
 Improvements upon the base dp memoisation implementation: 
 
