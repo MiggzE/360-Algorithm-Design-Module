@@ -19,3 +19,23 @@ upon previous finds.
 To compare the string with itself it uses a 2D memoization table. So for a cubic subsequence we can just
 extend that to a 3d memoization table since we want to find subsequences that repeat 3 times.
 
+It is easier to explain how the memoization works with a 2d table rather than a 3d so ill do that first
+so we can start with that and then extend it to the 3d version
+
+We compare each letter with a different index 
+so if they are the same letter and if they are different indexes we put a 0 in that spot
+otherwise we put a  
+
+
+Example: abcaabbc
+    a  b  c  a  a  b  b  c  | i
+a   0  0  0  1  1  0  0  0   
+b   0  0  0  1  1  1  1  0
+c   0  0  0  1  1  1  1  1
+a   1  0  0  1  2  1  1  1 
+a   1  0  0  2  2  1  1  1
+b   1  1  0  2  2  1  2  1
+b
+c
+--
+j
