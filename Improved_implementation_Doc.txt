@@ -54,3 +54,9 @@ Changes from longest repeating subsequence to longest cubic subsequence
 2 Recusive Calls -> 3 Recursive Calls
 
 Improvements upon the base dp memoisation implementation: 
+
+Pruning - removing letters that appear less than 3 times/ prune letters so that they only exist in multiples of 3
+
+Remove uneccessary state searches 
+- For example: string[i] != string[j] we only need to look at dropping either i or j and we don't need to do anything with k
+- The memoization table is symmetrical so if we follow i >= j >= k we don't look at redundant states
