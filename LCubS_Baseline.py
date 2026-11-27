@@ -19,4 +19,5 @@ def LCubS(s):
         return max(addCurrLetter,skipCurrLetter,key=len)
     return findLCubS(0,"")
 
-print(LCubS(input("Type a string for LCubS: ")))
+if __name__ == "__main__":
+    print(LCubS(input("Type a string for LCubS: ")))

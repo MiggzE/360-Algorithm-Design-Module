@@ -67,4 +67,5 @@ def LCubS(S):
                     best = LongestCommonSubsequence
     return best * 3
 
-print(LCubS(input("Type a string for LCubS: ")))
+if __name__ == "__main__":
+    print(LCubS(input("Type a string for LCubS: ")))
