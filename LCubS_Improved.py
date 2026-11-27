@@ -10,7 +10,7 @@ def LCubS(S):
 
             memTable = [[[None] * (len(sub3) + 1) for _ in range(len(sub2) + 1)] for _ in range(len(sub1) + 1)]
 
-            def LCM(i, j, k, string, memo):
+            def LCM(i, j, k):
                 if i == 0 or j == 0 or k == 0:
                     return ""
 
@@ -30,9 +30,10 @@ def LCubS(S):
                 memTable[i][j][k] = r
                 return r
 
-            LongestCommonSubsequence = LCM(len(sub1), len(sub2),len(sub3))            
+            LongestCommonSubsequence = LCM(len(sub1), len(sub2), len(sub3))            
 
             if(len(LongestCommonSubsequence) > len(best)):
-
+                best = LongestCommonSubsequence
+    return best * 3
 
 print(LCubS("aaaa"))
