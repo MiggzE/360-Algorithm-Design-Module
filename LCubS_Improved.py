@@ -1,27 +1,33 @@
 def LCubS(S):
     sLen = len(S)
-    memo = [[[-1 for _ in range(sLen)] for _ in range(sLen)] for _ in range(sLen)]
+    best = ""
+    
+    for p in range(1, sLen - 1):
+        for q in range(p + 1, sLen):
+            sub1 = S[:p]
+            sub2 = S[p:q]
+            sub3 = S[q:]
 
-    def findLCubS(i, j, k, string, memTable):
-  
-        if(i == 0 or j == 0 or k == 0):
-            return 0
+            memTable = [[[-1] * (len(sub3) + 1) for _ in range(len(sub2) + 1)] for _ in range(len(sub1) + 1)]
 
-        if(memTable[i - 1][j - 1][k - 1] != -1):
-            return memTable[i - 1][j - 1][k - 1]
+            def LCM(i, j, k, string, memo):
+                if i == 0 or j == 0 or k == 0:
+                    return 0
 
-        if(string[i - 1] == string[j - 1] == string[k - 1] and i != j and j != k and i != k):
-            memTable[i - 1][j - 1][k - 1] = 1 + findLCubS(i - 1, j - 1, k - 1, string, memTable)
-            return memTable[i - 1][j - 1][k - 1]
+                if(memTable[i][j][k] != -1):
+                    return memTable[i][j][k]
 
-        memTable[i - 1][j - 1][k - 1] = max(
-            findLCubS(i - 1, j, k, string, memTable),
-            findLCubS(i, j - 1, k, string, memTable),
-            findLCubS(i, j, k - 1, string, memTable)
-        )
+                if sub1[i - 1] == sub2[j - 1] == sub3[k - 1]:
+                    r = 1 + LCM(i-1,j-1,k-1)
 
-        return memTable[i - 1][j - 1][k - 1]
-    res = findLCubS(sLen, sLen, sLen, S, memo)
-    return res
+                else:
+                    r = max(
+                        LCM(i - 1, j, k)
+                        LCM(i, j - 1, k)
+                        LCM(i, j, k - 1)
+                    )
+                memTable[i][j][k] = r
+                return r
+        
 
 print(LCubS("aaaa"))

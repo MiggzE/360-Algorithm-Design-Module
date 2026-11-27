@@ -5,6 +5,7 @@ def isCubic(string):
     return string[:cSequenceLen] == string[cSequenceLen:cSequenceLen * 2] == string[cSequenceLen * 2:]
 
 def LCubS(s):
+    
     def findLCubS(i , curr):
         if i == len(s):
             if isCubic(curr):
