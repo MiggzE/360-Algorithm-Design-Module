@@ -13,8 +13,6 @@ def compareImplementations(string):
 
     print("Baseline Time: " + str(total))
 
-    print("#-----------------------------------------------------#")
-
     start = time.perf_counter()
 
     output = LCubS_Improved.LCubS(string)
@@ -28,3 +26,34 @@ def compareImplementations(string):
 
 print("[--- Basic String Test ---]")
 compareImplementations("atcgtatgcatgca")
+
+print("[--- Pruning Check 1 ---]")
+compareImplementations("mississippi")
+
+print("[--- Pruning Check 2 ---]")
+compareImplementations("aabbccddeeffgg")
+
+print("[--- Multiple LCubS 1 ---]")
+compareImplementations("ccbbcbcbcb")
+
+print("[--- Multiple LCubs 2 ---]")
+compareImplementations("cbabaccbcbc")
+
+print("[--- Strategic Slicing 1 ---]")
+compareImplementations("abcdefgabcdefgabcdefg")
+
+print("[--- Strategic Slicing 2 ---]")
+compareImplementations("abcdefghabcdefghabcdefgh")
+
+print("[--- Varied Length 1 (Size 10) ---]")
+compareImplementations("abcdefghabcdefghabcdefgh")
+
+print("[--- Varied Length 2 (Size 50) ---]")
+compareImplementations("abcdefghabcdefghabcdefgh")
+
+print("[--- Varied Length 3 (Size 100) ---]")
+compareImplementations("abcdefghabcdefghabcdefgh")
+
+print("[--- Varied Length 4 (Size 200) ---]")
+compareImplementations("abcdefghabcdefghabcdefgh")
+
