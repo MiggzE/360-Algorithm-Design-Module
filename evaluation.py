@@ -37,6 +37,7 @@ print("[--- Pruning Check Size 25 ---]")
 compareImplementations("cacbXbabIacaDYT8aacaababc")
 
 print("[--- Early Stop Size 20 ---]")
+compareImplementations("aYbbcacabbXcacabbcac")
 
 print("[--- Early Stop Size 25 ---]")
 compareImplementations("bacccXacabacccacabacccaca")
