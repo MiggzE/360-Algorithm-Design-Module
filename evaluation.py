@@ -51,8 +51,8 @@ compareImplementations("adacbdeddaeadae")
 print("[--- Varied Length 2 (Size 20) ---]")
 compareImplementations("abbeefabaffebcbdcada")
 
-print("[--- Varied Length 2 (Size 25) ---]")
+print("[--- Varied Length 3 (Size 25) ---]")
 compareImplementations("ebeaacaecfbbgcfcebbdcbbaf")
 
-print("[--- Varied Length 2 (Size 30) ---]")
+print("[--- Varied Length 4 (Size 30) ---]")
 compareImplementations("ccgibfadgjhacgbgdeejaffahhbfhh")
