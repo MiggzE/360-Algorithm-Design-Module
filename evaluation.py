@@ -2,27 +2,30 @@ import LCubS_Baseline
 import LCubS_Improved
 import time
 def compareImplementations(string):
-    start = time.perf_counter()
+    baselineStart = time.perf_counter()
 
     output = LCubS_Baseline.LCubS(string)
     print("Baseline Cubic Subsequence: " + output)
 
-    end = time.perf_counter()
+    baselineEnd = time.perf_counter()
 
-    total = end - start
+    baselineTotal = baselineEnd - baselineStart
 
-    print("Baseline Time: " + str(total))
+    print("Baseline Time: " + str(baselineTotal))
 
-    start = time.perf_counter()
+    improvedStart = time.perf_counter()
 
     output = LCubS_Improved.LCubS(string)
     print("Improved Cubic Subsequence: " + output)
 
-    end = time.perf_counter()
+    improvedEnd = time.perf_counter()
 
-    total = end - start
+    improvedTotal = improvedEnd - improvedStart
 
-    print("Improved Time: " + str(total))
+    percentDiff = round(baselineTotal / improvedTotal)
+
+    print("Improved Time: " + str(improvedTotal))
+    print("Improved Algorithm is around " + str(percentDiff) + "x faster")
 
 print("[--- Basic String Test ---]")
 compareImplementations("atcgtatgcatgca")
@@ -34,7 +37,6 @@ print("[--- Pruning Check Size 25 ---]")
 compareImplementations("cacbXbabIacaDYT8aacaababc")
 
 print("[--- Early Stop Size 20 ---]")
-compareImplementations("aYbbcacabbXcacabbcac")
 
 print("[--- Early Stop Size 25 ---]")
 compareImplementations("bacccXacabacccacabacccaca")
