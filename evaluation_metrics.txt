@@ -1,0 +1,9 @@
+There are specific things I need to test/compare for
+
+Strings with multiple letter counts less than 3 - Checks pruning improvement
+
+Strings with multiple longest cubic subsequences - Checks the global max improvement
+
+Strings to test the strategic slicing
+
+General strings with varying lengths
