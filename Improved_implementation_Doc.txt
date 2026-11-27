@@ -20,3 +20,7 @@ Remove uneccessary state searches
 
 Stopping once we have found a global max 
 This global max is defined by the sum of all letters greater than 3 divided by 3
+
+Strategically assigning our ps and qs. We can assign specific values to p and q in order to find 
+cubic sequences faster. These values can be assigned so that they are one after the indexes of a letter (since slicing is exclusive we do one after so that it includes the letter) 
+that occur 3 or more times. This way we can encompass ranges where all three subsequences end with a given letter and also start one index after the given letter 

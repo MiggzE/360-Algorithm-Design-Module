@@ -10,49 +10,61 @@ def LCubS(S):
 
     prunedString = ""
 
-    globalMaxLength = sum([x // 3 for x in letterCount.values()])
-    print(globalMaxLength)
-
     for i in S:
         if(letterCount[i] >= 3):
             prunedString = prunedString + i
 
-    for p in range(1, sLen - 1):
-        for q in range(p + 1, sLen):
+    globalMaxLength = sum([x // 3 for x in letterCount.values()])
+    print(globalMaxLength)
 
-            if(len(best) == globalMaxLength):
-                return best
+    letterIndexes = {} 
 
-            sub1 = prunedString[:p]
-            sub2 = prunedString[p:q]
-            sub3 = prunedString[q:]
+    for index, letter in enumerate(prunedString):
+        letterIndexes.setdefault(letter,[]).append(index)
 
-            memTable = [[[None] * (len(sub3) + 1) for _ in range(len(sub2) + 1)] for _ in range(len(sub1) + 1)]
+    for letter, indexes in letterIndexes.items():
+        for indexP in range(len(indexes)):
+            for indexQ in range(indexP + 1, len(indexes)):
 
-            def LCM(i, j, k):
-                if i == 0 or j == 0 or k == 0:
-                    return ""
+                if(len(best) == globalMaxLength):
+                    return best * 3
 
-                if(memTable[i][j][k] is not None):
-                    return memTable[i][j][k]
+                if(indexes[indexQ] > len(S) - 2):
+                    continue
 
-                if sub1[i - 1] == sub2[j - 1] == sub3[k - 1]:
-                    r = LCM(i-1,j-1,k-1) + sub1[i - 1]
+                p = indexes[indexP] + 1
+                q = indexes[indexQ] + 1
 
-                else:
-                    r = max(
-                        LCM(i - 1, j, k),
-                        LCM(i, j - 1, k),
-                        LCM(i, j, k - 1),
-                        key=len
-                    )
-                memTable[i][j][k] = r
-                return r
+                sub1 = prunedString[:p]
+                sub2 = prunedString[p:q]
+                sub3 = prunedString[q:]
 
-            LongestCommonSubsequence = LCM(len(sub1), len(sub2), len(sub3))            
+                memTable = [[[None] * (len(sub3) + 1) for _ in range(len(sub2) + 1)] for _ in range(len(sub1) + 1)]
 
-            if(len(LongestCommonSubsequence) > len(best)):
-                best = LongestCommonSubsequence
+                def LCM(i, j, k):
+                    if i == 0 or j == 0 or k == 0:
+                        return ""
+
+                    if(memTable[i][j][k] is not None):
+                        return memTable[i][j][k]
+
+                    if sub1[i - 1] == sub2[j - 1] == sub3[k - 1]:
+                        r = LCM(i-1,j-1,k-1) + sub1[i - 1]
+
+                    else:
+                        r = max(
+                            LCM(i - 1, j, k),
+                            LCM(i, j - 1, k),
+                            LCM(i, j, k - 1),
+                            key=len
+                        )
+                    memTable[i][j][k] = r
+                    return r
+
+                LongestCommonSubsequence = LCM(len(sub1), len(sub2), len(sub3))            
+
+                if(len(LongestCommonSubsequence) > len(best)):
+                    best = LongestCommonSubsequence
     return best * 3
 
 print(LCubS("atcgtatgcatgca"))
