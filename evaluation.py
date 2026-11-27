@@ -45,15 +45,13 @@ compareImplementations("abcdefgabcdefgabcdefg")
 print("[--- Strategic Slicing 2 ---]")
 compareImplementations("abcdefghabcdefghabcdefgh")
 
-print("[--- Varied Length 1 (Size 10) ---]")
-compareImplementations("abcdefghabcdefghabcdefgh")
-
 print("[--- Varied Length 2 (Size 50) ---]")
-compareImplementations("abcdefghabcdefghabcdefgh")
+compareImplementations("ddcadjpoijhihghjhbpfhdfehed")
 
-print("[--- Varied Length 3 (Size 100) ---]")
-compareImplementations("abcdefghabcdefghabcdefgh")
 
-print("[--- Varied Length 4 (Size 200) ---]")
-compareImplementations("abcdefghabcdefghabcdefgh")
+#print("[--- Varied Length 3 (Size 100) ---]")
+#compareImplementations("gFuhEsowocaoGhfiEdEwGEnFdGqbglcoDahoxuhtgttCmufkvjmBffunurjhCbnkEcCwafFdByjmBlnrqnszzqvbrpldAfwhkExn")
+
+#print("[--- Varied Length 4 (Size 200) ---]")
+#compareImplementations("m5jEw629S00Z3vrpTL8z0NXVm0tvGekgSE0TDRbOGm44g4R8zjhV6CDg2ReAmPv6SxbeTMgGchesIv3iriMynLTQBDJnEhulV7rZy1Ue0zmRz10C1MuMwTTrR33kESPkWahCjUQ9xVf7w3A6wesUBrxFovADDOZUGQzPDdqhBbrMJsCq2PgQ9W50VRbKTZsTYVrIJIYd")
 
