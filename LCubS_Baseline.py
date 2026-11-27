@@ -7,7 +7,7 @@ def isCubic(string):
     return string[:cSequenceLen] == string[cSequenceLen:cSequenceLen * 2] == string[cSequenceLen * 2:]
 
 def LCubS(s):
-    sys.setrecursionlimit(2 ^ len(s))
+    sys.setrecursionlimit(5000)
     def findLCubS(i , curr):
         if i == len(s):
             if isCubic(curr):
@@ -19,5 +19,4 @@ def LCubS(s):
         return max(addCurrLetter,skipCurrLetter,key=len)
     return findLCubS(0,"")
 
-
-print(LCubS("aaaa"))
+print(LCubS(input("Type a string for LCubS: ")))

@@ -4,7 +4,7 @@ def LCubS(S):
     sLen = len(S)
     best = ""
 
-    sys.setrecursionlimit(len(S) ^ 3)
+    sys.setrecursionlimit(5000)
     letterCount = {}
     for i in S:
         letterCount[i] = letterCount.get(i,0) + 1
@@ -16,7 +16,6 @@ def LCubS(S):
             prunedString = prunedString + i
 
     globalMaxLength = sum([x // 3 for x in letterCount.values()])
-    print(globalMaxLength)
 
     letterIndexes = {} 
 
@@ -68,4 +67,4 @@ def LCubS(S):
                     best = LongestCommonSubsequence
     return best * 3
 
-print(LCubS("atcgtatgcatgca"))
+print(LCubS(input("Type a string for LCubS: ")))
