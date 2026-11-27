@@ -1,3 +1,5 @@
+import sys
+
 def isCubic(string):
     if len(string) % 3 != 0:
         return False
@@ -5,7 +7,7 @@ def isCubic(string):
     return string[:cSequenceLen] == string[cSequenceLen:cSequenceLen * 2] == string[cSequenceLen * 2:]
 
 def LCubS(s):
-    
+    sys.setrecursionlimit(2 ^ len(s))
     def findLCubS(i , curr):
         if i == len(s):
             if isCubic(curr):
