@@ -1,12 +1,24 @@
+
+
 def LCubS(S):
     sLen = len(S)
     best = ""
 
+    letterCount = {}
+    for i in S:
+        letterCount[i] = letterCount.get(i,0) + 1
+
+    prunedString = ""
+
+    for i in S:
+        if(letterCount[i] >= 3):
+            prunedString = prunedString + i
+
     for p in range(1, sLen - 1):
         for q in range(p + 1, sLen):
-            sub1 = S[:p]
-            sub2 = S[p:q]
-            sub3 = S[q:]
+            sub1 = prunedString[:p]
+            sub2 = prunedString[p:q]
+            sub3 = prunedString[q:]
 
             memTable = [[[None] * (len(sub3) + 1) for _ in range(len(sub2) + 1)] for _ in range(len(sub1) + 1)]
 
@@ -36,4 +48,4 @@ def LCubS(S):
                 best = LongestCommonSubsequence
     return best * 3
 
-print(LCubS("aaaa"))
+print(LCubS("atcgtatgcatgca"))
