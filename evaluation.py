@@ -27,23 +27,23 @@ def compareImplementations(string):
 print("[--- Basic String Test ---]")
 compareImplementations("atcgtatgcatgca")
 
-print("[--- Pruning Check 1 ---]")
-compareImplementations("mississippi")
+print("[--- Pruning Check Size 20 ---]")
+compareImplementations("aRaaRKbaac6bDacaaccb")
 
-print("[--- Pruning Check 2 ---]")
-compareImplementations("aabbccddeeffgg")
+print("[--- Pruning Check Size 25 ---]")
+compareImplementations("cacbXbabIacaDYT8aacaababc")
 
-print("[--- Multiple LCubS 1 ---]")
-compareImplementations("ccbbcbcbcb")
+print("[--- Early Stop Size 20 ---]")
+compareImplementations("aYbbcacabbXcacabbcac")
 
-print("[--- Multiple LCubs 2 ---]")
-compareImplementations("cbabaccbcbc")
+print("[--- Early Stop Size 25 ---]")
+compareImplementations("bacccXacabacccacabacccaca")
 
-print("[--- Strategic Slicing 1 ---]")
-compareImplementations("abcdefgabcdefgabcdefg")
+print("[--- Strategic Slicing Size 20 ---]")
+compareImplementations("ggcaagatggttaatcaaga")
 
-print("[--- Strategic Slicing 2 ---]")
-compareImplementations("abcdefghabcdefghabcdefgh")
+print("[--- Strategic Slicing Size 25 ---]")
+compareImplementations("tacttgagtggcgtacaactaccag")
 
 print("[--- Varied Length 1 (Size 15) ---]")
 compareImplementations("adacbdeddaeadae")
