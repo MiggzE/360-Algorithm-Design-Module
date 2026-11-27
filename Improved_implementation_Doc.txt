@@ -18,3 +18,5 @@ Pruning - removing letters that appear less than 3 times/ prune letters so that 
 
 Remove uneccessary state searches 
 
+Stopping once we have found a global max 
+This global max is defined by the sum of all letters greater than 3 divided by 3

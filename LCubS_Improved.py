@@ -10,12 +10,19 @@ def LCubS(S):
 
     prunedString = ""
 
+    globalMaxLength = sum([x // 3 for x in letterCount.values()])
+    print(globalMaxLength)
+
     for i in S:
         if(letterCount[i] >= 3):
             prunedString = prunedString + i
 
     for p in range(1, sLen - 1):
         for q in range(p + 1, sLen):
+
+            if(len(best) == globalMaxLength):
+                return best
+
             sub1 = prunedString[:p]
             sub2 = prunedString[p:q]
             sub3 = prunedString[q:]
