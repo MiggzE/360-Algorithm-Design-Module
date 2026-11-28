@@ -1,4 +1,5 @@
 import sys 
+import time
 
 def LCubS(S):
     sLen = len(S)
@@ -67,5 +68,30 @@ def LCubS(S):
                     best = LongestCommonSubsequence
     return best * 3
 
+def LCubSTest():
+    print("[--- Improved Only Stress Test (size 100) ---]")    
+    improvedStart = time.perf_counter()
+
+    output = LCubS("gFuhEsowocaoGhfiEdEwGEnFdGqbglcoDahoxuhtgttCmufkvjmBffunurjhCbnkEcCwafFdByjmBlnrqnszzqvbrpldAfwhkExn")
+    print("Improved Cubic Subsequence: " + output)
+
+    improvedEnd = time.perf_counter()
+
+    improvedTotal = improvedEnd - improvedStart
+    print("Improved Time: " + str(improvedTotal))
+
+    print("[--- Improved Only Stress Test (size 200) ---]")    
+    improvedStart = time.perf_counter()
+
+    output = LCubS("m5jEw629S00Z3vrpTL8z0NXVm0tvGekgSE0TDRbOGm44g4R8zjhV6CDg2ReAmPv6SxbeTMgGchesIv3iriMynLTQBDJnEhulV7rZy1Ue0zmRz10C1MuMwTTrR33kESPkWahCjUQ9xVf7w3A6wesUBrxFovADDOZUGQzPDdqhBbrMJsCq2PgQ9W50VRbKTZsTYVrIJIYd")
+    print("Improved Cubic Subsequence: " + output)
+
+    improvedEnd = time.perf_counter()
+
+    improvedTotal = improvedEnd - improvedStart
+    print("Improved Time: " + str(improvedTotal))
+
+
 if __name__ == "__main__":
+    #LCubSTest()
     print(LCubS(input("Type a string for LCubS: ")))

@@ -46,7 +46,7 @@ print("[--- Strategic Slicing Size 20 ---]")
 compareImplementations("ggcaagatggttaatcaaga")
 
 print("[--- Strategic Slicing Size 25 ---]")
-compareImplementations("tacttgagtggcgtacaactaccag")
+compareImplementations("abxcdyabzcdwabucdvabtcdsq")
 
 print("[--- Varied Length 1 (Size 15) ---]")
 compareImplementations("adacbdeddaeadae")
@@ -58,4 +58,5 @@ print("[--- Varied Length 3 (Size 25) ---]")
 compareImplementations("ebeaacaecfbbgcfcebbdcbbaf")
 
 print("[--- Varied Length 4 (Size 30) ---]")
-compareImplementations("ccgibfadgjhacgbgdeejaffahhbfhh")
+compareImplementations("ccgibfadgjhacgbgdeejaffahhbfhh") 
+
